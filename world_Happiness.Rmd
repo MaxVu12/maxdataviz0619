@@ -1,5 +1,5 @@
 ---
-title: "R Notebook"
+title: "World Happiness Report Visualization"
 output: html_notebook
 ---
 
@@ -7,10 +7,21 @@ This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute
 
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
 
-```{setup the environment}
+```{r setup}
 rm(list=ls())
 
 dir()
+
+db15 <- read.csv("2015.csv", header = TRUE)
+db16 <- read.csv("2016.csv", header = TRUE)
+db17 <- read.csv("2017.csv", header = TRUE)
+```
+
+```{r}
+install.packages("ggmap")
+library(ggmap)
+library(tidyverse)
+library(dplyr)
 ```
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
