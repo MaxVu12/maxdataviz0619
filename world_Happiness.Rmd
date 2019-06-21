@@ -3,9 +3,6 @@ title: "World Happiness Report Visualization"
 output: html_notebook
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
-
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
 
 ```{r setup}
 rm(list=ls())
@@ -17,16 +14,33 @@ db16 <- read.csv("2016.csv", header = TRUE)
 db17 <- read.csv("2017.csv", header = TRUE)
 ```
 
-```{r}
+```{r install packages}
 install.packages("ggmap")
 library(ggmap)
 library(tidyverse)
 library(dplyr)
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+```{r}
+region_asia <- c("Southeastern Asia", "Eastern Asia", "Southern Asia")
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+db15asia <- db15[db15$Region %in% region_asia, ]
 
+country_asia <- db15asia$Country
+
+db16asia <- db16[db16$Country %in% country_asia, ]
+db17asia <- db17[db17$Country %in% country_asia, ]
+
+```
+
+```{r}
+db15asia$Year <- 2015
+db16asia$Year <- 2016
+db17asia$Year <- 2017
+```
+
+```{r}
+db16asia$Country[!(db16asia$Country %in% db15asia$Country)]
+db16asia$Country[!(db16asia$Country %in% db17asia$Country)]
+```

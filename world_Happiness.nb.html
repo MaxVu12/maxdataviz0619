@@ -1767,8 +1767,6 @@ $(document).ready(function () {
 
 
 <!-- rnb-text-begin -->
-<p>This is an <a href="http://rmarkdown.rstudio.com">R Markdown</a> Notebook. When you execute code within the notebook, the results appear beneath the code.</p>
-<p>Try executing this chunk by clicking the <em>Run</em> button within the chunk or by placing your cursor inside it and pressing <em>Cmd+Shift+Enter</em>.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucm0obGlzdD1scygpKVxuXG5kaXIoKVxuYGBgIn0= -->
@@ -1781,30 +1779,91 @@ dir()</code></pre>
 [4] &quot;maxdataviz0619.Rproj&quot;    &quot;README.md&quot;               &quot;world_Happiness.nb.html&quot;
 [7] &quot;world_Happiness.Rmd&quot;    </code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGIxNSA8LSByZWFkLmNzdihcIjIwMTUuY3N2XCIsIGhlYWRlciA9IFRSVUUpXG5kYjE2IDwtIHJlYWQuY3N2KFwiMjAxNi5jc3ZcIiwgaGVhZGVyID0gVFJVRSlcbmRiMTcgPC0gcmVhZC5jc3YoXCIyMDE3LmNzdlwiLCBoZWFkZXIgPSBUUlVFKVxuXG5cbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGIxNSA8LSByZWFkLmNzdihcIjIwMTUuY3N2XCIsIGhlYWRlciA9IFRSVUUpXG5kYjE2IDwtIHJlYWQuY3N2KFwiMjAxNi5jc3ZcIiwgaGVhZGVyID0gVFJVRSlcbmRiMTcgPC0gcmVhZC5jc3YoXCIyMDE3LmNzdlwiLCBoZWFkZXIgPSBUUlVFKVxuYGBgIn0= -->
 <pre class="r"><code>db15 &lt;- read.csv(&quot;2015.csv&quot;, header = TRUE)
 db16 &lt;- read.csv(&quot;2016.csv&quot;, header = TRUE)
-db17 &lt;- read.csv(&quot;2017.csv&quot;, header = TRUE)
+db17 &lt;- read.csv(&quot;2017.csv&quot;, header = TRUE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcImdnbWFwXCIpXG5gYGAifQ== -->
+<pre class="r"><code>install.packages(&quot;ggmap&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoidHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi9tYWNvc3gvZWwtY2FwaXRhbi9jb250cmliLzMuNi9nZ21hcF8zLjAuMC50Z3onXG5Db250ZW50IHR5cGUgJ2FwcGxpY2F0aW9uL3gtZ3ppcCcgbGVuZ3RoIDQ2OTg4ODAgYnl0ZXMgKDQuNSBNQilcbj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09XG5kb3dubG9hZGVkIDQuNSBNQlxuIn0= -->
+<pre><code>trying URL 'https://cran.rstudio.com/bin/macosx/el-capitan/contrib/3.6/ggmap_3.0.0.tgz'
+Content type 'application/x-gzip' length 4698880 bytes (4.5 MB)
+==================================================
+downloaded 4.5 MB</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5UaGUgZG93bmxvYWRlZCBiaW5hcnkgcGFja2FnZXMgYXJlIGluXG5cdC92YXIvZm9sZGVycy8zei9qNHF2aDg3czc3cWNzamR2cnltZmRjY3IwMDAwZ24vVC8vUnRtcFRhRHBYYi9kb3dubG9hZGVkX3BhY2thZ2VzXG4ifQ== -->
+<pre><code>
+The downloaded binary packages are in
+    /var/folders/3z/j4qvh87s77qcsjdvrymfdccr0000gn/T//RtmpTaDpXb/downloaded_packages</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShnZ21hcClcbmBgYCJ9 -->
+<pre class="r"><code>library(ggmap)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBnZ3Bsb3QyXG5SZWdpc3RlcmVkIFMzIG1ldGhvZCBvdmVyd3JpdHRlbiBieSAnZHBseXInOlxuICBtZXRob2QgICAgICAgICAgIGZyb21cbiAgcHJpbnQucm93d2lzZV9kZiAgICAgXG5Hb29nbGUncyBUZXJtcyBvZiBTZXJ2aWNlOiBodHRwczovL2Nsb3VkLmdvb2dsZS5jb20vbWFwcy1wbGF0Zm9ybS90ZXJtcy8uXG5QbGVhc2UgY2l0ZSBnZ21hcCBpZiB5b3UgdXNlIGl0ISBTZWUgY2l0YXRpb24oXCJnZ21hcFwiKSBmb3IgZGV0YWlscy5cbiJ9 -->
+<pre><code>Loading required package: ggplot2
+Registered S3 method overwritten by 'dplyr':
+  method           from
+  print.rowwise_df     
+Google's Terms of Service: https://cloud.google.com/maps-platform/terms/.
+Please cite ggmap if you use it! See citation(&quot;ggmap&quot;) for details.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5gYGAifQ== -->
+<pre class="r"><code>library(tidyverse)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXHUwMDFiWzM3beKUgOKUgCBcdTAwMWJbMW1BdHRhY2hpbmcgcGFja2FnZXNcdTAwMWJbMjJtIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgCB0aWR5dmVyc2UgMS4yLjEg4pSA4pSAXHUwMDFiWzM5bVxuXHUwMDFiWzM3bVx1MDAxYlszMm3inJRcdTAwMWJbMzdtIFx1MDAxYlszNG10aWJibGUgXHUwMDFiWzM3bSAyLjEuMyAgICAgXHUwMDFiWzMybeKclFx1MDAxYlszN20gXHUwMDFiWzM0bXB1cnJyICBcdTAwMWJbMzdtIDAuMy4yXG5cdTAwMWJbMzJt4pyUXHUwMDFiWzM3bSBcdTAwMWJbMzRtdGlkeXIgIFx1MDAxYlszN20gMC44LjMgICAgIFx1MDAxYlszMm3inJRcdTAwMWJbMzdtIFx1MDAxYlszNG1kcGx5ciAgXHUwMDFiWzM3bSAwLjguMVxuXHUwMDFiWzMybeKclFx1MDAxYlszN20gXHUwMDFiWzM0bXJlYWRyICBcdTAwMWJbMzdtIDEuMy4xICAgICBcdTAwMWJbMzJt4pyUXHUwMDFiWzM3bSBcdTAwMWJbMzRtc3RyaW5nclx1MDAxYlszN20gMS40LjBcblx1MDAxYlszMm3inJRcdTAwMWJbMzdtIFx1MDAxYlszNG10aWJibGUgXHUwMDFiWzM3bSAyLjEuMyAgICAgXHUwMDFiWzMybeKclFx1MDAxYlszN20gXHUwMDFiWzM0bWZvcmNhdHNcdTAwMWJbMzdtIDAuNC4wXHUwMDFiWzM5bVxuXHUwMDFiWzM3beKUgOKUgCBcdTAwMWJbMW1Db25mbGljdHNcdTAwMWJbMjJtIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgCB0aWR5dmVyc2VfY29uZmxpY3RzKCkg4pSA4pSAXG5cdTAwMWJbMzFt4pyWXHUwMDFiWzM3bSBcdTAwMWJbMzRtZHBseXJcdTAwMWJbMzdtOjpcdTAwMWJbMzJtZmlsdGVyKClcdTAwMWJbMzdtIG1hc2tzIFx1MDAxYlszNG1zdGF0c1x1MDAxYlszN206OmZpbHRlcigpXG5cdTAwMWJbMzFt4pyWXHUwMDFiWzM3bSBcdTAwMWJbMzRtZHBseXJcdTAwMWJbMzdtOjpcdTAwMWJbMzJtbGFnKClcdTAwMWJbMzdtICAgIG1hc2tzIFx1MDAxYlszNG1zdGF0c1x1MDAxYlszN206OmxhZygpXHUwMDFiWzM5bVxuIn0= -->
+<pre><code>[37m── [1mAttaching packages[22m ──────────────────────────────────────────────────── tidyverse 1.2.1 ──[39m
+[37m[32m✔[37m [34mtibble [37m 2.1.3     [32m✔[37m [34mpurrr  [37m 0.3.2
+[32m✔[37m [34mtidyr  [37m 0.8.3     [32m✔[37m [34mdplyr  [37m 0.8.1
+[32m✔[37m [34mreadr  [37m 1.3.1     [32m✔[37m [34mstringr[37m 1.4.0
+[32m✔[37m [34mtibble [37m 2.1.3     [32m✔[37m [34mforcats[37m 0.4.0[39m
+[37m── [1mConflicts[22m ─────────────────────────────────────────────────────── tidyverse_conflicts() ──
+[31m✖[37m [34mdplyr[37m::[32mfilter()[37m masks [34mstats[37m::filter()
+[31m✖[37m [34mdplyr[37m::[32mlag()[37m    masks [34mstats[37m::lag()[39m</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShkcGx5cilcbmBgYCJ9 -->
+<pre class="r"><code>library(dplyr)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVnaW9uX2FzaWEgPC0gYyhcIlNvdXRoZWFzdGVybiBBc2lhXCIsIFwiRWFzdGVybiBBc2lhXCIsIFwiU291dGhlcm4gQXNpYVwiKVxuXG5kYjE1YXNpYSA8LSBkYjE1W2RiMTUkUmVnaW9uICVpbiUgcmVnaW9uX2FzaWEsIF1cblxuY291bnRyeV9hc2lhIDwtIGRiMTVhc2lhJENvdW50cnlcblxuZGIxNmFzaWEgPC0gZGIxNltkYjE2JENvdW50cnkgJWluJSBjb3VudHJ5X2FzaWEsIF1cbmRiMTdhc2lhIDwtIGRiMTdbZGIxNyRDb3VudHJ5ICVpbiUgY291bnRyeV9hc2lhLCBdXG5cbmBgYCJ9 -->
+<pre class="r"><code>region_asia &lt;- c(&quot;Southeastern Asia&quot;, &quot;Eastern Asia&quot;, &quot;Southern Asia&quot;)
+
+db15asia &lt;- db15[db15$Region %in% region_asia, ]
+
+country_asia &lt;- db15asia$Country
+
+db16asia &lt;- db16[db16$Country %in% country_asia, ]
+db17asia &lt;- db17[db17$Country %in% country_asia, ]
 </code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcImdnbWFwXCIpXG5saWJyYXJ5KGdnbWFwKVxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KGRwbHlyKVxuYGBgIn0= -->
-<pre class="r"><code>install.packages(&quot;ggmap&quot;)
-library(ggmap)
-library(tidyverse)
-library(dplyr)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGIxNWFzaWEkWWVhciA8LSAyMDE1XG5kYjE2YXNpYSRZZWFyIDwtIDIwMTZcbmRiMTdhc2lhJFllYXIgPC0gMjAxN1xuYGBgIn0= -->
+<pre class="r"><code>db15asia$Year &lt;- 2015
+db16asia$Year &lt;- 2016
+db17asia$Year &lt;- 2017</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Cmd+Option+I</em>.</p>
-<p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Cmd+Shift+K</em> to preview the HTML file).</p>
-<p>The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.</p>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGIxNmFzaWEkQ291bnRyeVshKGRiMTZhc2lhJENvdW50cnkgJWluJSBkYjE1YXNpYSRDb3VudHJ5KV1cbmRiMTZhc2lhJENvdW50cnlbIShkYjE2YXNpYSRDb3VudHJ5ICVpbiUgZGIxN2FzaWEkQ291bnRyeSldXG5gYGAifQ== -->
+<pre class="r"><code>db16asia$Country[!(db16asia$Country %in% db15asia$Country)]
+db16asia$Country[!(db16asia$Country %in% db17asia$Country)]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiV29ybGQgSGFwcGluZXNzIFJlcG9ydCBWaXN1YWxpemF0aW9uIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiAKClRyeSBleGVjdXRpbmcgdGhpcyBjaHVuayBieSBjbGlja2luZyB0aGUgKlJ1biogYnV0dG9uIHdpdGhpbiB0aGUgY2h1bmsgb3IgYnkgcGxhY2luZyB5b3VyIGN1cnNvciBpbnNpZGUgaXQgYW5kIHByZXNzaW5nICpDbWQrU2hpZnQrRW50ZXIqLiAKCmBgYHtyIHNldHVwfQpybShsaXN0PWxzKCkpCgpkaXIoKQoKZGIxNSA8LSByZWFkLmNzdigiMjAxNS5jc3YiLCBoZWFkZXIgPSBUUlVFKQpkYjE2IDwtIHJlYWQuY3N2KCIyMDE2LmNzdiIsIGhlYWRlciA9IFRSVUUpCmRiMTcgPC0gcmVhZC5jc3YoIjIwMTcuY3N2IiwgaGVhZGVyID0gVFJVRSkKYGBgCgpgYGB7cn0KaW5zdGFsbC5wYWNrYWdlcygiZ2dtYXAiKQpsaWJyYXJ5KGdnbWFwKQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShkcGx5cikKYGBgCgpBZGQgYSBuZXcgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpJbnNlcnQgQ2h1bmsqIGJ1dHRvbiBvbiB0aGUgdG9vbGJhciBvciBieSBwcmVzc2luZyAqQ21kK09wdGlvbitJKi4KCldoZW4geW91IHNhdmUgdGhlIG5vdGVib29rLCBhbiBIVE1MIGZpbGUgY29udGFpbmluZyB0aGUgY29kZSBhbmQgb3V0cHV0IHdpbGwgYmUgc2F2ZWQgYWxvbmdzaWRlIGl0IChjbGljayB0aGUgKlByZXZpZXcqIGJ1dHRvbiBvciBwcmVzcyAqQ21kK1NoaWZ0K0sqIHRvIHByZXZpZXcgdGhlIEhUTUwgZmlsZSkuIAoKVGhlIHByZXZpZXcgc2hvd3MgeW91IGEgcmVuZGVyZWQgSFRNTCBjb3B5IG9mIHRoZSBjb250ZW50cyBvZiB0aGUgZWRpdG9yLiBDb25zZXF1ZW50bHksIHVubGlrZSAqS25pdCosICpQcmV2aWV3KiBkb2VzIG5vdCBydW4gYW55IFIgY29kZSBjaHVua3MuIEluc3RlYWQsIHRoZSBvdXRwdXQgb2YgdGhlIGNodW5rIHdoZW4gaXQgd2FzIGxhc3QgcnVuIGluIHRoZSBlZGl0b3IgaXMgZGlzcGxheWVkLgoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiV29ybGQgSGFwcGluZXNzIFJlcG9ydCBWaXN1YWxpemF0aW9uIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgoKYGBge3Igc2V0dXB9CnJtKGxpc3Q9bHMoKSkKCmRpcigpCgpkYjE1IDwtIHJlYWQuY3N2KCIyMDE1LmNzdiIsIGhlYWRlciA9IFRSVUUpCmRiMTYgPC0gcmVhZC5jc3YoIjIwMTYuY3N2IiwgaGVhZGVyID0gVFJVRSkKZGIxNyA8LSByZWFkLmNzdigiMjAxNy5jc3YiLCBoZWFkZXIgPSBUUlVFKQpgYGAKCmBgYHtyIGluc3RhbGwgcGFja2FnZXN9Cmluc3RhbGwucGFja2FnZXMoImdnbWFwIikKbGlicmFyeShnZ21hcCkKbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkoZHBseXIpCmBgYAoKCmBgYHtyfQpyZWdpb25fYXNpYSA8LSBjKCJTb3V0aGVhc3Rlcm4gQXNpYSIsICJFYXN0ZXJuIEFzaWEiLCAiU291dGhlcm4gQXNpYSIpCgpkYjE1YXNpYSA8LSBkYjE1W2RiMTUkUmVnaW9uICVpbiUgcmVnaW9uX2FzaWEsIF0KCmNvdW50cnlfYXNpYSA8LSBkYjE1YXNpYSRDb3VudHJ5CgpkYjE2YXNpYSA8LSBkYjE2W2RiMTYkQ291bnRyeSAlaW4lIGNvdW50cnlfYXNpYSwgXQpkYjE3YXNpYSA8LSBkYjE3W2RiMTckQ291bnRyeSAlaW4lIGNvdW50cnlfYXNpYSwgXQoKYGBgCgpgYGB7cn0KZGIxNWFzaWEkWWVhciA8LSAyMDE1CmRiMTZhc2lhJFllYXIgPC0gMjAxNgpkYjE3YXNpYSRZZWFyIDwtIDIwMTcKYGBgCgpgYGB7cn0KZGIxNmFzaWEkQ291bnRyeVshKGRiMTZhc2lhJENvdW50cnkgJWluJSBkYjE1YXNpYSRDb3VudHJ5KV0KZGIxNmFzaWEkQ291bnRyeVshKGRiMTZhc2lhJENvdW50cnkgJWluJSBkYjE3YXNpYSRDb3VudHJ5KV0KYGBgCg==</div>
 
 
 
