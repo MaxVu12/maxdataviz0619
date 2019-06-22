@@ -3,11 +3,12 @@ title: "World Happiness Report Visualization"
 output: html_notebook
 ---
 
+In this R Notebook, I will attempt to visualize the 2015 World Happiness Repory using ggplot and ggflag. 
 
-```{r setup}
+First, installing packages. 
+
+```{r}
 rm(list=ls())
-
-dir()
 
 if (!require("rworldmap")) {
   install.packages("rworldmap")
@@ -30,30 +31,25 @@ if (!require("ggflags")) {
 ```
 
 
+Then load the data, 
 ```{r}
 db15 <- read.csv("2015.csv", header = TRUE, stringsAsFactors = FALSE)
 db15$Origin <- countrycode(c(db15$Country), "country.name", "iso2c")
 db15$Origin <- tolower(db15$Origin)
 ```
 
+
+I will first plot the GDP per Capita against the happiness score. 
 ```{r}
 ggplot(db15,
        aes(x=Happiness.Score,
            y=Economy..GDP.per.Capita.),
            country=Origin)+
   geom_flag(country=db15$Origin,) +
-  scale_country() +
-  scale_size(range = c(0, 5))
+  scale_country()
 ```
 
 
-
-```{r}
-# ggplot(db15,
-#        aes(x=Economy..GDP.per.Capita.,
-#            y=Happiness.Score))+
-#   geom_point(aes(color = Region))
-```
 
 
   
